@@ -10,7 +10,7 @@ namespace HW2_DZ3.Facrories
 {
     public class PetFactory : CreatureFactory
     {
-
+        // контоль ввода возраста животного, пропускает от 1 до 40 лет
         public override int ControledAgeInput()
         {
             int result = 0;

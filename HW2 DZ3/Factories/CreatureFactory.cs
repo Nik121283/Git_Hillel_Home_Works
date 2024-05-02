@@ -13,7 +13,7 @@ namespace HW2_DZ3.Facrories
 
         abstract public Creature createCreature();
 
-        public Regex nameAndSurnamePattern = new Regex(@"^[A-Za-zА-Яа-я]*");
+        public Regex nameAndSurnamePattern = new Regex(@"^[\p{L}]+$");
 
         public Regex userAge = new Regex(@"^[1-9][0-9]?");
 
@@ -21,6 +21,7 @@ namespace HW2_DZ3.Facrories
 
         abstract public int ControledAgeInput();       
                     
+        // используется для проверки ввода имен, фамилий, клички живтоных. Пропускает только Unicode
         public string ControledDataInput()
         {
             string result = string.Empty;
@@ -34,6 +35,7 @@ namespace HW2_DZ3.Facrories
             return result;
         }
 
+        //принимает ввод из консоли: М - мужчской пол, Ж _ женский, лубой др ввод НЕИЗМЕВСТНЫЙ пол
         public Gender genderInput()
         {
             Gender result = Gender.Unknown;

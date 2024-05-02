@@ -17,7 +17,7 @@ namespace HW2_DZ3.Facrories
             {
                 result = int.Parse(Console.ReadLine());
             }
-            while (!(result > 0 & result < 100));
+            while (!(result > 0 && result < 100));
 
             return result;
         }
@@ -33,7 +33,7 @@ namespace HW2_DZ3.Facrories
             string LastName = ControledDataInput();
 
             Console.WriteLine("Введите возраст");
-            int age = int.Parse(Console.ReadLine());
+            int age = ControledAgeInput();
 
             
             Console.WriteLine("Выберите гендер: М - мужчина, W - женщина, НЕИЗВЕСТНО - любая другая клавиша");
