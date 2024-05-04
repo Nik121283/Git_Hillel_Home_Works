@@ -25,10 +25,14 @@ namespace HW2_DZ3.Facrories
         public string ControledDataInput()
         {
             string result = string.Empty;
+            bool flag = false;
 
             do
             {
+                if (flag) { Console.WriteLine("\nВы ввели не подходящие данные. Попробуйте снова"); }
+
                 result = Console.ReadLine();
+                flag = true;
             }
             while (!nameAndSurnamePattern.IsMatch(result));
 

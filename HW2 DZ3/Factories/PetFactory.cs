@@ -14,10 +14,13 @@ namespace HW2_DZ3.Facrories
         public override int ControledAgeInput()
         {
             int result = 0;
-
+            bool flag = false;
             do
             {
+                if (flag) { Console.WriteLine("\nВы ввели не подходящие данные. Попробуйте снова"); }
+
                 result = int.Parse(Console.ReadLine());
+                flag = true;
             }
             while (! (result > 0 & result < 40));
 

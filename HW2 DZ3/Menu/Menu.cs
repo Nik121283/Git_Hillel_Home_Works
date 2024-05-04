@@ -47,27 +47,25 @@ namespace HW2_DZ3.Menu
 
                     Console.WriteLine(menuItems[i]);
                 }
-
                 Console.ResetColor();
+
+                //управление курсором
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
 
                 if (keyInfo.Key == ConsoleKey.UpArrow)
                 {
+                    //используем МАХ чтобы не дать выйте selectedIndex за границы массива menuItems, т.е. не меньше 0
                     selectedIndex = Math.Max(0, selectedIndex - 1);
                 }
                 else if (keyInfo.Key == ConsoleKey.DownArrow)
                 {
+                    //используем МИН чтобы не дать выйте selectedIndex за границы массива menuItems, т.е. не больше 3
                     selectedIndex = Math.Min(menuItems.Length - 1, selectedIndex + 1);
                 }
                 else if (keyInfo.Key == ConsoleKey.Enter)
                 {
-                    if (selectedIndex == menuItems.Length - 1)
-                    {
-                        break; // Выход из цикла при выборе "Exit"
-                    }
-                    else
-                    {
-                        switch (selectedIndex)
+
+                    switch (selectedIndex)
                         {
                             case 0:
                                 listOfCreatures.Add(new UserFactory().createCreature());
@@ -85,8 +83,8 @@ namespace HW2_DZ3.Menu
 
                             case 3:
                                 break;
-                        }
-                    }
+                        }    
+                    
                 }
             }
         }
