@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace HW2_DZ3.Facrories
 {
+
     internal class UserFactory : CreatureFactory
     {
         public override int ControledAgeInput()
