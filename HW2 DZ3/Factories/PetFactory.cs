@@ -41,9 +41,10 @@ namespace HW2_DZ3.Facrories
             Console.WriteLine("Введите возраст животного");
             int age = ControledAgeInput();
 
-            Console.WriteLine("Выберите гендер: 1 - мужчина, 2 - женщина, НЕИЗВЕСТНО - любая другая клавиша");
+            Console.WriteLine("Выберите гендер: 1 - мужчина, 2 - женщина, НЕИЗВЕСТНО - 3");
             Gender gender = genderInput();
 
+            Console.WriteLine("\n Новое животное создано");
             return new Pet(FirstName, Vid_i_poroda, age, gender);
         }
     }
