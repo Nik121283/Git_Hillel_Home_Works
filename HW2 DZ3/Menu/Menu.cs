@@ -62,7 +62,8 @@ namespace HW2_DZ3.Menu
                     //используем МИН чтобы не дать выйте selectedIndex за границы массива menuItems, т.е. не больше 3
                     selectedIndex = Math.Min(menuItems.Length - 1, selectedIndex + 1);
                 }
-                else if (keyInfo.Key == ConsoleKey.Enter)
+                
+                if (keyInfo.Key == ConsoleKey.Enter)
                 {
 
                     switch (selectedIndex)
@@ -82,7 +83,9 @@ namespace HW2_DZ3.Menu
                                 continue;
 
                             case 3:
-                                break;
+                            Console.WriteLine("Выход из программы.");
+                            Environment.Exit(0);
+                            break;
                         }    
                     
                 }
