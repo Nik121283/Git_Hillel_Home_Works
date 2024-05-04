@@ -40,7 +40,7 @@ namespace HW2_DZ3.Facrories
             int age = ControledAgeInput();
 
             
-            Console.WriteLine("Выберите гендер: М - мужчина, W - женщина, НЕИЗВЕСТНО - любая другая клавиша");
+            Console.WriteLine("Выберите гендер: 1 - мужчина, 2 - женщина, НЕИЗВЕСТНО - любая другая клавиша");
             Gender gender = genderInput();
 
             return new User(FirstName, LastName, gender, age);

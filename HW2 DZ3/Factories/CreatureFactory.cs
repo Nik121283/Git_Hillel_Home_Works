@@ -1,6 +1,7 @@
 ﻿using HW2_DZ3.Creatures;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -42,23 +43,28 @@ namespace HW2_DZ3.Facrories
         //принимает ввод из консоли: М - мужчской пол, Ж _ женский, лубой др ввод НЕИЗМЕВСТНЫЙ пол
         public Gender genderInput()
         {
-            Gender result = Gender.Unknown;
+            Gender result;
 
-            switch (Console.ReadLine())
+            bool flag = false;
+
+            do
             {
-                case "М":
-                    result = Gender.Male;
-                    Console.WriteLine("Вы выбрали мужской пол.");
-                    break;
-                case "Ж":
-                    result = Gender.Female;
-                    Console.WriteLine("Вы выбрали женский пол.");
-                    break;
-                default:
-                    result = Gender.Unknown;
-                    Console.WriteLine("Вы выбрали неизвестный гендер.");
-                    break;
+
+                if (!Enum.TryParse(Console.ReadLine(), out result) || !Enum.IsDefined(typeof(Gender), result))
+                {
+                    Console.WriteLine("Неверный ввод! Пожалуйста, введите 1, 2 или 3.");
+                    flag = true;
+                }
+                else
+                {
+                    Console.WriteLine("Выбранный пол: " + result);
+                    flag = false;
+                }
+
+                
             }
+            while (flag);
+
 
             return result;
         }
