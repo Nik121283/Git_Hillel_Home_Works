@@ -8,9 +8,9 @@ namespace HW2_DZ3.Creatures
 {
     public enum Gender
     {
-        Male,
-        Female,
-        Unknown
+        Male = 1,
+        Female = 2,
+        Unknown = 3
     }
 
     public class User : Creature
