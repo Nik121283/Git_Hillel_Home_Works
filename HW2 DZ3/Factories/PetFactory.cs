@@ -14,10 +14,13 @@ namespace HW2_DZ3.Facrories
         public override int ControledAgeInput()
         {
             int result = 0;
-
+            bool flag = false;
             do
             {
+                if (flag) { Console.WriteLine("\nВы ввели не подходящие данные. Попробуйте снова"); }
+
                 result = int.Parse(Console.ReadLine());
+                flag = true;
             }
             while (! (result > 0 & result < 40));
 
@@ -38,9 +41,10 @@ namespace HW2_DZ3.Facrories
             Console.WriteLine("Введите возраст животного");
             int age = ControledAgeInput();
 
-            Console.WriteLine("Выберите гендер: М - мужчина, Ж - женщина, НЕИЗВЕСТНО - любая другая клавиша");
+            Console.WriteLine("Выберите гендер: 1 - мужчина, 2 - женщина, НЕИЗВЕСТНО - 3");
             Gender gender = genderInput();
 
+            Console.WriteLine("\n Новое животное создано");
             return new Pet(FirstName, Vid_i_poroda, age, gender);
         }
     }

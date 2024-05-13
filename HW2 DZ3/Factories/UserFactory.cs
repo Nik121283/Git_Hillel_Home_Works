@@ -13,10 +13,13 @@ namespace HW2_DZ3.Facrories
         public override int ControledAgeInput()
         {
             int result = 0;
-
+            bool flag = false;
             do
             {
+                if (flag) { Console.WriteLine("\nВы ввели не подходящие данные. Попробуйте снова"); }
+
                 result = int.Parse(Console.ReadLine());
+                flag = true;
             }
             while (!(result > 0 && result < 100));
 
@@ -37,9 +40,10 @@ namespace HW2_DZ3.Facrories
             int age = ControledAgeInput();
 
             
-            Console.WriteLine("Выберите гендер: М - мужчина, W - женщина, НЕИЗВЕСТНО - любая другая клавиша");
+            Console.WriteLine("Выберите гендер: 1 - мужчина, 2 - женщина, НЕИЗВЕСТНО - 3");
             Gender gender = genderInput();
 
+            Console.WriteLine("\n Новый юзер создан");
             return new User(FirstName, LastName, gender, age);
         }
 
